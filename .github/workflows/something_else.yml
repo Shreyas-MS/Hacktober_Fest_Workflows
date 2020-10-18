@@ -1,0 +1,29 @@
+name: something_else
+on: #what event triggers this workflow
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+env:
+  WORD: "Hello World!"
+
+jobs:
+  print_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: print hello
+        run: echo $WORD
+      - name: print multiline
+        run: |
+          echo "hello"
+          echo "world"
+          #YAML = YAML ain't a markup language
+  python_version:
+    runs-on: ubuntu-latest
+    container: docker://python:3.7.7
+    steps:
+      - name: print version
+        run: python3 -V
+# runs-on: docker://python:3.7.7
