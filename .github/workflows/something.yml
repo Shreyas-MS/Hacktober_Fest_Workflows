@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        sdfjalskdjlfsadjlk
       - name: print hello
         run: echo $WORD
       - name: print multiline
